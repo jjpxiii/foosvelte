@@ -1,4 +1,4 @@
-name: install, test and build
+name: GOOOOO DENO 🦕
 
 on: [push]
 jobs:
@@ -25,3 +25,5 @@ jobs:
         run: deno run lint
       - name: run tests
         run: deno run test
+      - name: build
+        run: deno run build

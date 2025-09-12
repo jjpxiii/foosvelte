@@ -1,9 +1,9 @@
-name: GOOOOO BUN 🍙
+name: GOOOOO PNPM 🟧
 
 on: [push]
 jobs:
   extract:
-    name: GOOOOO BUN 🍙
+    name: GOOOOO PNPM 🟧
     runs-on: ubuntu-latest
     # permissions:
     #   id-token: write # Needed for auth with Deno Deploy
@@ -13,17 +13,17 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v3
 
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          bun-version: latest
+          version: 10
       - name: install from scratch
-        run: bun install
+        run: pnpm i
       - name: install one package
-        run: bun add oxlint
+        run: pnpm add oxlint
       - name: run lint
-        run: bun run lint
+        run: pnpm lint
       - name: run tests
-        run: bun run test
+        run: pnpm test
       - name: build
-        run: bun run build
+        run: pnpm build

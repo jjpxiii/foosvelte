@@ -1,4 +1,4 @@
-name: install, test and build
+name: GOOOOO NPM 🐢
 
 on: [push]
 jobs:
@@ -22,6 +22,8 @@ jobs:
       - name: install one package
         run: npm i oxlint
       - name: run lint
-        run: npx oxlint .
+        run: npm run lint
       - name: run tests
         run: npm test
+      - name: build
+        run: npm run build
