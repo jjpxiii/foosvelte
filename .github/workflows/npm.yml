@@ -1,0 +1,27 @@
+name: install, test and build
+
+on: [push]
+jobs:
+  extract:
+    name: Extract
+    runs-on: ubuntu-latest
+    # permissions:
+    #   id-token: write # Needed for auth with Deno Deploy
+    #   contents: read # Needed to clone the repository
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+
+      - name: Setup npm
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: install from scratch
+        run: npm i
+      - name: install one package
+        run: npm i oxlint
+      - name: run lint
+        run: npx oxlint .
+      - name: run tests
+        run: npm test
