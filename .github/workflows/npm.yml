@@ -18,9 +18,9 @@ jobs:
         with:
           node-version: 24
       - name: install from scratch
-        run: npm i
+        run: npm i --no-audit --no-fund --loglevel=error
       - name: install one package
-        run: npm i oxlint
+        run: npm i --no-audit --no-fund --loglevel=error oxlint
       - name: run lint
         run: npm run lint
       - name: run tests
