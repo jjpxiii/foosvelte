@@ -27,3 +27,5 @@ jobs:
         run: deno run test
       - name: build
         run: deno run build
+      - name: build storybook
+        run: deno run build-storybook
